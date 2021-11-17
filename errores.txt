@@ -1,0 +1,6 @@
+
+- No hacia falta implementar CommandLineRunner.
+- He interpretado muy mal el ejercicio mezclando conceptos...
+	* Solo hacia falta un starter que diera un servicio de circuitbreaker con estados.
+- Solo hacia falta un server con 1 endpoint para ir modificando los estados...
+- Mal implementado el pom... Solucionado
