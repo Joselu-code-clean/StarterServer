@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.StarterClient.CircuitBreaker;
 
 @Component
-@Endpoint(id = "id")
+@Endpoint(id = "state")
 @RestController
 public class EndPointState {
 	
 	@Autowired
 	CircuitBreaker circuitBreaker;
 	
-	private Byte retry = 0;
+	private Integer retry = 0;
 	
 	@ReadOperation
 	public String changeStatus() {
