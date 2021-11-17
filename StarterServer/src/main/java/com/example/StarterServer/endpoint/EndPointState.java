@@ -16,12 +16,13 @@ public class EndPointState {
 	@Autowired
 	CircuitBreaker circuitBreaker;
 	
+	// Para comprobar que funciona cada intento.
 	private Integer retry = 0;
 	
 	@ReadOperation
 	public String changeStatus() {
 		retry++;
-		System.out.println(retry);
+		System.out.println("Intento:---"+retry);
 		return circuitBreaker.changeStatus();
 	}
 }
