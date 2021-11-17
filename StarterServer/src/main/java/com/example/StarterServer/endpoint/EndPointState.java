@@ -1,0 +1,27 @@
+package com.example.StarterServer.endpoint;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.actuate.endpoint.annotation.Endpoint;
+import org.springframework.boot.actuate.endpoint.annotation.ReadOperation;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.StarterClient.CircuitBreaker;
+
+@Component
+@Endpoint(id = "id")
+@RestController
+public class EndPointState {
+	
+	@Autowired
+	CircuitBreaker circuitBreaker;
+	
+	private Byte retry = 0;
+	
+	@ReadOperation
+	public String changeStatus() {
+		retry++;
+		System.out.println(retry);
+		return circuitBreaker.changeStatus();
+	}
+}
